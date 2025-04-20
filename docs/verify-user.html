@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Verification</title>
+</head>
+<body>
+    <h1>Verify Your Role</h1>
+    <p>To interact with **DefendaBot**, you need to verify your role.</p>
+    <form id="verifyForm">
+        <label for="userId">Enter your Discord User ID:</label>
+        <input type="text" id="userId" name="userId" required>
+        <button type="submit">Verify</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("verifyForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const userId = document.getElementById("userId").value;
+
+            // Here you'd send the userId to your backend or API to verify it
+            // For demonstration, we simulate successful verification:
+            const message = `Verification in progress for user ID: ${userId}`;
+            document.getElementById("message").textContent = message;
+            
+            // You would replace this with your API call to verify the user's role
+            // e.g., sending the userId to a server that checks the role in Discord
+        });
+    </script>
+</body>
+</html>
